@@ -6,14 +6,14 @@ const sequelize = new Sequelize({
 });
 
 // Carrega os modelos passando `sequelize`
-const Administrador = require('./Administrador')(sequelize);
-const Carrinho = require('./Carrinho')(sequelize);
-const Cliente = require('./Cliente')(sequelize);
-const Compra = require('./Compra')(sequelize);
-const Estoque = require('./Estoque')(sequelize);  // Esta linha já está correta
-const Funcionario = require('./Funcionario')(sequelize);
-const Produto = require('./Produto')(sequelize);
-const Venda = require('./Venda')(sequelize);
+const Administrador = require('./models/Administrador')(sequelize);
+const Carrinho = require('./models/Carrinho')(sequelize);
+const Cliente = require('.models/Cliente')(sequelize);
+const Compra = require('./models/Compra')(sequelize);
+const Estoque = require('./models/Estoque')(sequelize);
+const Funcionario = require('./models/Funcionario')(sequelize);
+const Produto = require('./models/Produto')(sequelize);
+const Venda = require('./models/Venda')(sequelize);
 
 // Relacionamentos
 Funcionario.hasMany(Venda, {foreignKey: 'funcionarioId', as: 'vendas' });
