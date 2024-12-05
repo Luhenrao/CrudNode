@@ -1,7 +1,3 @@
-id
-nome
-cpf
-endereco
 
 const { DataTypes } = require('sequelize');
 

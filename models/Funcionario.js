@@ -1,7 +1,3 @@
-id
-nome
-cpf
-Vendas
 
 const { DataTypes } = require('sequelize');
 

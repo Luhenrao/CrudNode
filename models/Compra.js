@@ -1,9 +1,3 @@
-id
-cnpj
-valor
-Administrador
-Produtos
-
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
