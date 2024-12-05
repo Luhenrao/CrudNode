@@ -1,10 +1,3 @@
-id
-valor
-desconto
-Produto
-Funcionario
-Cliente
-
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {

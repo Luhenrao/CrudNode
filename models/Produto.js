@@ -1,12 +1,3 @@
-id
-nome
-preco
-quantidade
-Estoque
-Compra
-Venda
-Carrinho
-
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {

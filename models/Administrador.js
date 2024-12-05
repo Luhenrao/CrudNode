@@ -1,7 +1,3 @@
-nome
-email
-Compra
-
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
@@ -17,6 +13,11 @@ module.exports = (sequelize) => {
       validate: {
         isEmail: true, // Validação para garantir que o valor seja um email válido
       }
+    },
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
   });
 };

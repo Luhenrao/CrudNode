@@ -1,6 +1,3 @@
-id
-Produto
-Cliente
 
 const { DataTypes } = require('sequelize');
 
