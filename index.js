@@ -15,6 +15,7 @@ app.post('/administrador', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 app.post('/carrinho', async (req, res) => {
   try {
     const carrinho = await Carrinho.create(req.body);
@@ -23,6 +24,7 @@ app.post('/carrinho', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 app.post('/cliente', async (req, res) => {
   try {
     const cliente = await Cliente.create(req.body);
@@ -31,6 +33,7 @@ app.post('/cliente', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 app.post('/compra', async (req, res) => {
   try {
     const compra = await Compra.create(req.body);
@@ -39,6 +42,7 @@ app.post('/compra', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 app.post('/estoque', async (req, res) => {
   try {
     const estoque = await Estoque.create(req.body);
@@ -47,6 +51,7 @@ app.post('/estoque', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 app.post('/funcionario', async (req, res) => {
   try {
     const funcionario = await Funcionario.create(req.body);
@@ -55,6 +60,7 @@ app.post('/funcionario', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 app.post('/produto', async (req, res) => {
   try {
     const produto = await Produto.create(req.body);
@@ -63,6 +69,7 @@ app.post('/produto', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 app.post('/venda', async (req, res) => {
   try {
     const venda = await Venda.create(req.body);
@@ -71,6 +78,7 @@ app.post('/venda', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 /////////////////////////////////////////////////
 // Rota para criar endereço associado ao usuário
 /*app.post('/users/:userId/address', async (req, res) => {
@@ -289,112 +297,112 @@ app.put('/venda/:id', async (req, res) => {
 });
   
 // DELETE
-app.delete('/users/:id', async (req, res) => {
+app.delete('/administrador/delete/:id', async (req, res) => {
     try {
-      const user = await User.findByPk(req.params.id);
-      if (user) {
-        await user.destroy();
-        res.json({ message: 'User deleted' });
+      const administrador = await Administrador.findByPk(req.params.id);
+      if (administrador) {
+        await administrador.destroy();
+        res.json({ message: 'Administrador deleted' });
       } else {
-        res.status(404).json({ error: 'User not found' });
+        res.status(404).json({ error: 'Administrador not found' });
       }
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/carrinho/delete/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.destroy();
-      res.json({ message: 'User deleted' });
+    const carrinho = await Carrinho.findByPk(req.params.id);
+    if (carrinho) {
+      await carrinho.destroy();
+      res.json({ message: 'Carrinho deleted' });
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ error: 'Carrinho not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/cliente/delete/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.destroy();
-      res.json({ message: 'User deleted' });
+    const cliente = await Cliente.findByPk(req.params.id);
+    if (cliente) {
+      await cliente.destroy();
+      res.json({ message: 'Cliente deleted' });
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ error: 'Cliente not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/compra/delete/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.destroy();
-      res.json({ message: 'User deleted' });
+    const compra = await Compra.findByPk(req.params.id);
+    if (compra) {
+      await compra.destroy();
+      res.json({ message: 'Compra deleted' });
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ error: 'Compra not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/Estoque/delete/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.destroy();
-      res.json({ message: 'User deleted' });
+    const estoque = await Estoque.findByPk(req.params.id);
+    if (estoque) {
+      await estoque.destroy();
+      res.json({ message: 'Estoque deleted' });
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ error: 'Estoque not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/funcionario/delete/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.destroy();
-      res.json({ message: 'User deleted' });
+    const funcionario = await Funcionario.findByPk(req.params.id);
+    if (funcionario) {
+      await funcionario.destroy();
+      res.json({ message: 'Funcionario deleted' });
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ error: 'Funcionario not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/produto/delete/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.destroy();
-      res.json({ message: 'User deleted' });
+    const produto = await Produto.findByPk(req.params.id);
+    if (produto) {
+      await produto.destroy();
+      res.json({ message: 'Produto deleted' });
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ error: 'Produto not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/venda/delete/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.destroy();
-      res.json({ message: 'User deleted' });
+    const venda = await Venda.findByPk(req.params.id);
+    if (venda) {
+      await venda.destroy();
+      res.json({ message: 'Venda deleted' });
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(404).json({ error: 'Venda not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
